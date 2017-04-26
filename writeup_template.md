@@ -151,7 +151,7 @@ The end pipeline performs pretty well on the project video, creating bounding bo
 approximate the shape of the car. However, it can be improved with more relaxed
 thresholds and more windows in the medium and large scale.
 
-Here's a link to the video. [Video](output_images/project.mp4)
+Here's a link to the video. [Video](output_video.mp4)
 
 #### 2. Describe how (and identify where in your code) you implemented some kind of filter for false positives and some method for combining overlapping bounding boxes.
 
