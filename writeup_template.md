@@ -6,10 +6,11 @@ This is a writeup for my Vehicle Detection project.
 
 The project has been structured into multiple files:
 
-- classifier.py: the SVM training code. Includes all that is necessary to train
+- **classifier.py**: the SVM training code. Includes all that is necessary to train
   the SVM classifier to detect cars
-- Proto2.py: the 
-
+- **vehicledetector.py**: the vehicle detection code. Searches for and marks vehicles
+  in the provided video. (the first argument can be a video filename.)
+- **hyperparameters.py**: all the hyperparameters for both training and detection.
 
 ## Classification Process
 
@@ -26,7 +27,8 @@ To run the classification phase:
 To run the scan phase:
 
 1. Run the classification phase and generate the `classified.p` file.
-2. Run `python3 Proto2.py test_video.mp4` in the Udacity CarND python environment.
+2. Run `python3 vehicledetector.py test_video.mp4` in the Udacity CarND python
+   environment.
 
 ## Goals
 
@@ -100,7 +102,7 @@ Test Accuracy of SVC = 0.9901
 
 I implemented a sliding window search method in the search phase, in
 `lesson_functions.py` lines 199-227. I then implemented the search function in
-`Proto2.py` lines 31-67 to search over 3 scales, specifying overlap and sizes.
+`vehicledetector.py` lines 31-67 to search over 3 scales, specifying overlap and sizes.
 
 I specified my search scales in terms of a "window size" hyperparameter called `WS` which
 is 32px. My smallest scale was WS x WS, the medium scale was 3 * WS x 3 * WS, and the
@@ -177,7 +179,7 @@ from road shadows. What helped me most here was running the classifier on the en
 dataset, giving it a much better understanding of the difference between road and car.
 
 As well as that, I did not know where to start - I didn't have a mental roadmap in front
-of me, of which part to implement first and which seocnd.
+of me, of which part to implement first and which second.
 
 My pipeline will likely fail on roads that go outside the window area (ie, slopes or
 hills, as well as steeper curves and intersections). For these to work, the classifier
