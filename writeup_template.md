@@ -102,7 +102,8 @@ Test Accuracy of SVC = 0.9901
 
 I implemented a sliding window search method in the search phase, in
 `lesson_functions.py` lines 199-227. I then implemented the search function in
-`vehicledetector.py` lines 31-67 to search over 3 scales, specifying overlap and sizes.
+`vehicledetector.py` lines 31-46 (lines 46-67 are the heatmapping function) to search over 3 scales, specifying overlap
+and sizes.
 
 I specified my search scales in terms of a "window size" hyperparameter called `WS` which
 is 32px. My smallest scale was WS x WS, the medium scale was 3 * WS x 3 * WS, and the
@@ -159,6 +160,8 @@ with classifier parameters to provide the least possible false positives.
 
 After all that was done, I implemented a heatmap by mapping windows over multiple frames
 and thresholding the map to create a map of vehicle positions.
+
+This heatmap and labelling is done in vehicledetector.py lines 48-65.
 
 I then used `scipy.ndimage.measurements.label` to identify blobs in the heatmap and
 assign them to a vehicle. After that, I constructed bounding boxes surrounding the
