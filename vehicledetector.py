@@ -75,4 +75,4 @@ vid_name = sys.argv[1] if len(sys.argv) > 1 else "project_video.mp4"
 
 clip = VideoFileClip(vid_name)
 output = clip.fl_image(run_vid)
-output.write_videofile("output_images/" + str(time.time()) + "_" + vid_name, audio=False)
+output.write_videofile(str(time.time()) + "_" + vid_name, audio=False)

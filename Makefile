@@ -1,4 +1,4 @@
-.PHONY: render data
+.PHONY: render
 
 data:
 	echo "No soup for you!"
@@ -8,7 +8,7 @@ classified.p: data
 	python3 classifier.py
 
 render_test: classified.p
-	python3 Proto2.py test_video.mp4
+	python3 vehicledetector.py test_video.mp4
 
 render_project: classified.p
-	python3 Proto2.py project_video.mp4
+	python3 vehicledetector.py project_video.mp4

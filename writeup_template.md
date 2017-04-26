@@ -174,9 +174,15 @@ The heatmap is visible on the test video as well, but here's a screenshot:
 
 **Where will your pipeline likely fail? What could you do to make it more robust?**
 
-When I was implementing this project, I had a lot of trouble isolating false positives
+When I was implementing this project, I had a lot of [trouble isolating false positives][1]
 from road shadows. What helped me most here was running the classifier on the entire
 dataset, giving it a much better understanding of the difference between road and car.
+
+[1]: Prototype%20Videos/1493150619.582245_test_video.mp4
+
+I also had some trouble detecting the white car. Perhaps this is because of the dataset,
+as white cars are less common than other colors and this might have thrown the color
+histogram function off.
 
 As well as that, I did not know where to start - I didn't have a mental roadmap in front
 of me, of which part to implement first and which second.
